@@ -61,6 +61,113 @@
 
     
     
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+  body { background: #020617 !important; }
+
+  /* Hide MkDocs chrome */
+  .md-header, .md-tabs, .md-footer, .md-sidebar { display: none !important; }
+  .md-main__inner { margin: 0 !important; padding: 0 !important; }
+  .md-content { margin: 0 !important; max-width: 100% !important; }
+  .md-content__inner { margin: 0 !important; padding: 0 !important; }
+
+  /* Password overlay */
+  #password-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #020617; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Nav styling */
+  .nav-link {
+    padding: 8px 16px; border-radius: 8px; font-size: 14px; font-weight: 500;
+    color: #94a3b8; background: rgba(51, 65, 85, 0.3);
+    text-decoration: none; transition: all 0.2s;
+  }
+  .nav-link:hover { background: rgba(51, 65, 85, 0.6); color: #e2e8f0; }
+  .nav-link.active { background: #2563eb; color: white; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3); }
+
+  /* Content styling */
+  .content-wrapper {
+    max-width: 1200px; margin: 0 auto; padding: 24px;
+  }
+
+  /* Typography */
+  .md-typeset { color: #e2e8f0 !important; font-size: 15px; line-height: 1.7; }
+  .md-typeset h1 {
+    color: #f1f5f9 !important; font-size: 2em; font-weight: 700;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5); padding-bottom: 12px; margin-bottom: 24px;
+  }
+  .md-typeset h2 {
+    color: #e2e8f0 !important; font-size: 1.5em; font-weight: 600;
+    margin-top: 32px; margin-bottom: 16px;
+    padding-bottom: 8px; border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+  }
+  .md-typeset h3 { color: #cbd5e1 !important; font-size: 1.25em; font-weight: 600; margin-top: 24px; }
+  .md-typeset h4 { color: #94a3b8 !important; font-size: 1.1em; font-weight: 600; }
+  .md-typeset p { color: #cbd5e1; margin-bottom: 16px; }
+  .md-typeset strong { color: #f1f5f9 !important; font-weight: 600; }
+  .md-typeset a { color: #60a5fa !important; text-decoration: none; }
+  .md-typeset a:hover { color: #93c5fd !important; text-decoration: underline; }
+
+  /* Lists */
+  .md-typeset ul, .md-typeset ol { color: #cbd5e1; padding-left: 24px; margin-bottom: 16px; }
+  .md-typeset li { margin-bottom: 8px; }
+  .md-typeset li::marker { color: #3b82f6; }
+
+  /* Tables */
+  .md-typeset table {
+    width: 100%; border-collapse: collapse; margin: 24px 0;
+    background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(51, 65, 85, 0.4);
+    border-radius: 12px; overflow: hidden;
+  }
+  .md-typeset table th {
+    background: rgba(30, 41, 59, 0.8) !important; color: #e2e8f0 !important;
+    padding: 12px 16px; text-align: left; font-weight: 600; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  }
+  .md-typeset table td {
+    padding: 12px 16px; border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+    color: #cbd5e1;
+  }
+  .md-typeset table tr:hover { background: rgba(51, 65, 85, 0.2); }
+  .md-typeset table tr:last-child td { border-bottom: none; }
+
+  /* Code */
+  .md-typeset code {
+    background: rgba(51, 65, 85, 0.5) !important; color: #f472b6 !important;
+    padding: 2px 6px; border-radius: 4px; font-size: 14px;
+  }
+
+  /* Blockquotes */
+  .md-typeset blockquote {
+    border-left: 4px solid #3b82f6; background: rgba(30, 58, 138, 0.2);
+    padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0;
+  }
+  .md-typeset blockquote p { color: #93c5fd; margin: 0; }
+
+  /* HR */
+  .md-typeset hr {
+    border: none; height: 1px; background: rgba(51, 65, 85, 0.5);
+    margin: 32px 0;
+  }
+
+  /* Cards for sections */
+  .card-section {
+    background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(51, 65, 85, 0.4);
+    border-radius: 12px; padding: 24px; margin-bottom: 24px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #475569; }
+</style>
+
   </head>
   
   
@@ -69,7 +176,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -2135,35 +2242,58 @@
               
               <article class="md-content__inner md-typeset">
                 
-<div id="password-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #37474f; z-index: 9999; display: flex; align-items: center; justify-content: center;">
-  <div style="background: white; padding: 40px 50px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); text-align: center; max-width: 400px;">
-    <h2 style="margin: 0 0 10px 0; color: #37474f;">LaBrant & Associates</h2>
-    <p style="color: #666; margin-bottom: 25px;">Sales Strategy Portal</p>
+<!-- Password Overlay -->
+<div id="password-overlay">
+  <div style="background: rgba(15, 23, 42, 0.9); padding: 48px; border-radius: 16px; border: 1px solid rgba(51, 65, 85, 0.5); text-align: center; max-width: 400px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+    <div style="width: 56px; height: 56px; margin: 0 auto 20px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center;">
+      <span style="color: white; font-size: 24px; font-weight: 700;">L</span>
+    </div>
+    <h2 style="margin: 0 0 8px 0; color: #f1f5f9; font-size: 20px; font-weight: 600;">LaBrant Sales Intelligence</h2>
+    <p style="color: #64748b; margin-bottom: 28px; font-size: 14px;">SE Wisconsin Commercial Painting</p>
     <form id="password-form">
       <input type="password" id="password-input" placeholder="Enter password"
-        style="width: 100%; padding: 12px 15px; font-size: 16px; border: 2px solid #ddd; border-radius: 4px; box-sizing: border-box; margin-bottom: 15px;"
+        style="width: 100%; padding: 14px 16px; font-size: 15px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #e2e8f0; box-sizing: border-box; margin-bottom: 16px; outline: none;"
+        onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#334155'"
         autocomplete="off">
       <button type="submit"
-        style="width: 100%; padding: 12px; font-size: 16px; background: #1565c0; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        style="width: 100%; padding: 14px; font-size: 15px; font-weight: 600; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; border-radius: 8px; cursor: pointer; transition: all 0.2s;"
+        onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 10px 20px -5px rgba(59, 130, 246, 0.4)'"
+        onmouseout="this.style.transform='none'; this.style.boxShadow='none'">
         Access Portal
       </button>
-      <p id="error-msg" style="color: #c62828; margin-top: 15px; display: none;">Incorrect password</p>
+      <p id="error-msg" style="color: #f87171; margin-top: 16px; display: none; font-size: 14px;">Incorrect password</p>
     </form>
   </div>
 </div>
 
-<div id="main-content" style="display: none;">
-  <nav id="top-nav" style="background: #24292f; padding: 12px 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-    <div style="max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center;">
-      <a href="/labrant-sales-strategy/" style="color: white; text-decoration: none; font-weight: 600; font-size: 15px;">Home</a>
-      <a href="/labrant-sales-strategy/strategy-master-plan/" style="color: #8b949e; text-decoration: none; font-size: 14px;">Strategy</a>
-      <a href="/labrant-sales-strategy/research-overview/" style="color: #8b949e; text-decoration: none; font-size: 14px;">Research</a>
-      <a href="/labrant-sales-strategy/market-transit-fleet/" style="color: #8b949e; text-decoration: none; font-size: 14px;">Segments</a>
-      <a href="/labrant-sales-strategy/appendix-senior-living-1/" style="color: #8b949e; text-decoration: none; font-size: 14px;">Appendices</a>
-      <a href="/labrant-sales-strategy/quick-reference/" style="color: #8b949e; text-decoration: none; font-size: 14px;">Quick Ref</a>
+<!-- Main Content -->
+<div id="main-content" style="display: none; min-height: 100vh; background: #020617;">
+  <!-- Header -->
+  <header style="background: linear-gradient(to right, #0f172a, #1e293b); border-bottom: 1px solid rgba(51, 65, 85, 0.5); padding: 16px 24px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);">
+          <span style="color: white; font-size: 18px; font-weight: 700;">L</span>
+        </div>
+        <div>
+          <h1 style="margin: 0; color: #f1f5f9; font-size: 18px; font-weight: 700;">LaBrant Sales Intelligence Hub</h1>
+          <p style="margin: 0; color: #64748b; font-size: 12px;">SE Wisconsin Commercial Painting Market</p>
+        </div>
+      </div>
+      <nav style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="/labrant-sales-strategy/" class="nav-link">Home</a>
+        <a href="/labrant-sales-strategy/strategy-master-plan/" class="nav-link">Strategy</a>
+        <a href="/labrant-sales-strategy/research-overview/" class="nav-link">Research</a>
+        <a href="/labrant-sales-strategy/market-transit-fleet/" class="nav-link">Segments</a>
+        <a href="/labrant-sales-strategy/appendix-senior-living-1/" class="nav-link">Appendices</a>
+        <a href="/labrant-sales-strategy/quick-reference/" class="nav-link">Quick Ref</a>
+      </nav>
     </div>
-  </nav>
-  
+  </header>
+
+  <!-- Content -->
+  <main class="content-wrapper">
+    
                   
 
 
@@ -3056,22 +3186,20 @@
 
 
                 
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid rgba(51, 65, 85, 0.3); padding: 20px 24px; margin-top: 48px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; color: #475569; font-size: 13px;">
+      <span>LaBrant & Associates LLC | Sales Intelligence Hub</span>
+      <span>Research compiled December 2025 | 350+ sources</span>
+    </div>
+  </footer>
 </div>
 
 <script>
 (function() {
-  const CORRECT_HASH = '8b3a4c5d2e1f'; // Simple hash of password
   const SESSION_KEY = 'labrant_auth';
-
-  function simpleHash(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash;
-    }
-    return Math.abs(hash).toString(16).substring(0, 12);
-  }
 
   function checkAuth() {
     return sessionStorage.getItem(SESSION_KEY) === 'true';
@@ -3080,6 +3208,7 @@
   function showContent() {
     document.getElementById('password-overlay').style.display = 'none';
     document.getElementById('main-content').style.display = 'block';
+    highlightCurrentNav();
   }
 
   function showLogin() {
@@ -3087,19 +3216,36 @@
     document.getElementById('main-content').style.display = 'none';
   }
 
-  // Check if already authenticated
+  function highlightCurrentNav() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === path ||
+          (path.endsWith('/') && link.getAttribute('href') === path.slice(0, -1) + '/')) {
+        link.classList.add('active');
+      }
+    });
+    // Default to home if none match
+    if (!document.querySelector('.nav-link.active')) {
+      const homeLink = document.querySelector('.nav-link[href="/labrant-sales-strategy/"]');
+      if (homeLink && path.includes('labrant-sales-strategy')) {
+        // Only highlight home if we're on the actual home page
+        if (path === '/labrant-sales-strategy/' || path === '/labrant-sales-strategy') {
+          homeLink.classList.add('active');
+        }
+      }
+    }
+  }
+
   if (checkAuth()) {
     showContent();
   } else {
     showLogin();
   }
 
-  // Handle form submission
   document.getElementById('password-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const input = document.getElementById('password-input').value;
-
-    // Check password (IceFish13$)
     if (input === 'IceFish13$') {
       sessionStorage.setItem(SESSION_KEY, 'true');
       showContent();
