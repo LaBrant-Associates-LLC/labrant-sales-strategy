@@ -52,6 +52,20 @@
 
 ---
 
+## Market Segments
+
+| Document | Description |
+|----------|-------------|
+| [Transit & Fleet Facilities](market-transit-fleet.md) | MCTS, school bus yards, fleet maintenance |
+| [Food & Cold Storage](market-food-beverage.md) | Breweries, food processing, cold storage |
+| [I-94 Industrial Corridor](market-i94-corridor.md) | Foxconn area, industrial development |
+| [Automotive Dealerships](market-automotive.md) | Dealer groups, service centers |
+| [Religious Institutions](market-religious.md) | Archdiocese, churches, parishes |
+| [Private Schools](market-private-schools.md) | K-12 private and parochial schools |
+| [Country Clubs](market-country-clubs.md) | Golf clubs, private clubs |
+
+---
+
 ## Appendices
 
 | Document | Description |
