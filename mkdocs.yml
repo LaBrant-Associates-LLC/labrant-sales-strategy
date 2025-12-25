@@ -1,0 +1,62 @@
+site_name: LaBrant & Associates Sales Strategy
+site_description: SE Wisconsin Commercial Painting Market Intelligence
+site_url: https://labrant-associates-llc.github.io/labrant-sales-strategy
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: blue grey
+    accent: amber
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+  icon:
+    logo: material/briefcase
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Strategy:
+    - Master Strategy Plan: strategy-master-plan.md
+    - Job Profitability: strategy-profitability.md
+    - GC Pipeline Intel: strategy-gc-pipeline.md
+    - Competitor Intel: strategy-competitor-intel.md
+    - Market Sizing: strategy-market-sizing.md
+  - Research:
+    - Overview: research-overview.md
+    - Part 1 - Municipal: research-part1-municipal.md
+    - Part 1.1 - Municipal Deep: research-part1-deep.md
+    - Part 2 - GC Landscape: research-part2-gc.md
+    - Part 3 - Developers: research-part3-developers.md
+    - Part 4 - Retail/Housing: research-part4-retail.md
+    - Part 5 - WisDOT: research-part5-wisdot.md
+    - Part 6 - Public Facilities: research-part6-public.md
+    - Part 6.1 - Facility Maint: research-part6-1-maintenance.md
+    - Part 6.2 - Large Property: research-part6-2-large-facilities.md
+    - Part 6.3 - Industrial: research-part6-3-industrial.md
+    - Part 7 - Multifamily: research-part7-multifamily.md
+  - Appendices:
+    - Senior Living 1: appendix-senior-living-1.md
+    - Senior Living 2: appendix-senior-living-2.md
+    - Water Towers: appendix-water-towers.md
+    - Data Centers: appendix-data-centers.md
+    - Diversification: appendix-diversification.md
+  - Quick Reference: quick-reference.md
+
+extra_css:
+  - stylesheets/extra.css
