@@ -1,3 +1,12 @@
+!!! danger "DEPRECATED - This site has been consolidated"
+    **This content has moved to the new Sales Intelligence Handbook.**
+
+    **[→ Go to the new Sales Intelligence Handbook](https://labrant-associates-llc.github.io/sales-intelligence-handbook/)**
+
+    This site will remain available for reference but is no longer maintained.
+
+---
+
 # LaBrant & Associates — Sales Strategy Portal
 
 **SE Wisconsin Commercial Painting** | December 2025
